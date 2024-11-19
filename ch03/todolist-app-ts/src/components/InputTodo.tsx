@@ -1,5 +1,4 @@
 import { KeyboardEvent, useState } from "react";
-import React from "react";
 
 type InputTodoType = {
   addTodo: (todo: string) => void;
@@ -12,6 +11,7 @@ const InputTodo = ({ addTodo }: InputTodoType) => {
     addTodo(todo);
     setTodo("");
   };
+
   const enterInput = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       addHandler();

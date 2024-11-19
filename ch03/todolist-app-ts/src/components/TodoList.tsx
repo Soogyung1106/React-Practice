@@ -1,6 +1,5 @@
 import { ITodoItem } from "../AppContainer";
 import TodoListItem from "./TodoListItem";
-import React from "react";
 
 type TodoListType = {
   todoList: ITodoItem[];
@@ -9,7 +8,7 @@ type TodoListType = {
 };
 
 const TodoList = ({ todoList, deleteTodo, toggleDone }: TodoListType) => {
-  let items = todoList.map((item) => {
+  const items = todoList.map((item) => {
     return <TodoListItem key={item.no} todoItem={item} deleteTodo={deleteTodo} toggleDone={toggleDone} />;
   });
 

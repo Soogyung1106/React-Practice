@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import App from "./components/App";
 import { produce } from "immer";
 
@@ -17,20 +17,20 @@ const AppContainer = () => {
   ]);
 
   const addTodo = (todo: string) => {
-    let newTodoList = produce(todoList, (draft) => {
+    const newTodoList = produce(todoList, (draft) => {
       draft.push({ no: new Date().getTime(), todo: todo, done: false });
     });
     setTodoList(newTodoList);
   };
 
   const deleteTodo = (no: number) => {
-    let newTodoList = todoList.filter((item) => item.no !== no);
+    const newTodoList = todoList.filter((item) => item.no !== no);
     setTodoList(newTodoList);
   };
 
   const toggleDone = (no: number) => {
-    let index = todoList.findIndex((item) => item.no === no);
-    let newTodoList = produce(todoList, (draft) => {
+    const index = todoList.findIndex((item) => item.no === no);
+    const newTodoList = produce(todoList, (draft) => {
       draft[index].done = !draft[index].done;
     });
     setTodoList(newTodoList);

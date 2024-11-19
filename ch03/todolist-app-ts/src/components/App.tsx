@@ -1,16 +1,15 @@
-import React from "react";
 import TodoList from "./TodoList";
 import InputTodo from "./InputTodo";
 import { ITodoItem } from "../AppContainer";
 
 type AppType = {
-  todoList: ITodoItem[];
   addTodo: (todo: string) => void;
   deleteTodo: (no: number) => void;
   toggleDone: (no: number) => void;
+  todoList: ITodoItem[];
 };
 
-const App = ({ todoList, addTodo, deleteTodo, toggleDone }) => {
+const App = ({ todoList, addTodo, deleteTodo, toggleDone }: AppType) => {
   return (
     <div className="container">
       <div className="card card-body bg-light">
